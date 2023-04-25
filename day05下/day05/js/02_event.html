@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <button onclick="alert('onclick')">onclick</button>
+        <button onmouseover="alert('onmouseover')">onmouseover</button>
+        <button onmouseout="alert('onmouseout')">onmouseout</button>
+        <br/>
+        输入你的名字: <input type="text" id="fname" onchange="myFunction()"/>
+        <script type="text/javascript">
+            //定义方法
+            function myFunction() {
+                var x = document.getElementById("fname")
+                x.value = x.value.toUpperCase()
+            }
+            window.onload = f;
+            function f() {
+                alert("页面加载完毕")
+            }
+        </script>
+    </body>
+</html>

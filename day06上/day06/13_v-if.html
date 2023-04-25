@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <p v-if="seen">现在你能看到我了</p>
+            <p v-else>现在你看不到我了</p>
+
+            <p v-if="seen2">现在你能看到我了2</p>
+            <p v-else-if="!seen2">现在你看不到我了2</p>
+            <a>随便插入的东西</a>
+            <!-- 控制多个标签的显示与隐藏 -->
+            <!-- template可以做多个标签的包裹，template本身没有任何的前端展示效果 -->
+            <template v-if="seen2">
+                <p>p1</p>
+                <p>p2</p>
+                <p>p3</p>
+            </template>
+        </div>
+        <script type="text/javascript">
+            const { ref } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const seen = ref(false)
+                    const seen2 = ref(true)
+                    return {
+                        seen,
+                        seen2
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

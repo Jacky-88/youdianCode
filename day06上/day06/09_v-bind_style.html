@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <div style="background:rgb(70, 218, 198);font-size:20px;">
+                Hello Vue!
+            </div>
+            <div :style="{background: color,fontSize: num + 'px'}">
+                Hello Vue!
+            </div>
+        </div>
+        <script type="text/javascript">
+            const { ref } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const color = ref('blue')
+                    const num = 15
+                    return {
+                        color,
+                        num
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

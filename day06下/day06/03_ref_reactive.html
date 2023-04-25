@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            {{ student }}
+            <br>
+            {{ student.name }}
+        </div>
+        <script type="text/javascript">
+            const { reactive } = Vue
+            const HelloVueApp = {
+                setup() {
+                    //定义对象, reactive返回一个proxy对象，实现对象类型的响应式
+                    //使用const定义对象，对象本身不能改变，但是对象的属性可以改变
+                    const student = reactive({
+                        name: "zhangsan",
+                        age: 12,
+                        score: 70
+                    })
+                    console.log(student)
+                    return {
+                        student
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

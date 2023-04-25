@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <!-- 遍历数组 -->
+            <li v-for="item,index in myArray">
+                {{ item }} - {{ index }}
+            </li>
+            <!-- 遍历对象 -->
+            <li v-for="val,key in myObj">
+                {{ val }} - {{ key }}
+            </li>
+        </div>
+        <script type="text/javascript">
+            const { ref,reactive } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const myArray = ([
+                        '主机',
+                        '显示器',
+                        '键盘'
+                    ])
+                    const myObj = reactive({
+                        host: '主机',
+                        displayer: '显示器',
+                        keyboard: '键盘'
+                    })
+                    return {
+                        myArray,
+                        myObj
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

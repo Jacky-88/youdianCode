@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <li v-for="item,index in myArray" :key="item.id">
+                {{ item.id }}
+                <input type="text" :placeholder="item.name">
+                <button @click="btn(index)">删除</button>
+            </li>
+        </div>
+        <script type="text/javascript">
+            const { ref } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const myArray = ref([
+                        {id:1, name:'主机'},
+                        {id:2, name:'显示器'},
+                        {id:3, name:'键盘'},
+                    ])
+                    function btn(i) {
+                        myArray.value.splice(i, 1)
+                        console.log(myArray.value)
+                    }
+                    return {
+                        myArray,
+                        btn
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

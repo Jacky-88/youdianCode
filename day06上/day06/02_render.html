@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            Counter: {{ counter }}
+        </div>
+        <script type="text/javascript">
+            //引入vue的原生方法
+            const { ref, onMounted } = Vue
+            const HelloVueApp = {
+                setup() {
+                    //变量的定义
+                    const counter = ref(5)
+                    //生命周期钩子
+                    onMounted(() => {
+                        console.log(counter)
+                        //定时器
+                        setInterval(() => {
+                            //ref定义的变量，在js内部使用，必须加.value,在模板中使用不需要.value
+                            counter.value ++
+                        }, 1000)
+                        //1000代表每隔1秒执行一次
+                    })
+                    //如果需要html使用到，则返回出去
+                    return {
+                        counter
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

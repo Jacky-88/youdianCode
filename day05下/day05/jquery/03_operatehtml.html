@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <p id="demo">这是一个段落</p>
+        <button id="hide">隐藏</button>
+        <button id="show">显示</button>
+        <button id="toggle">切换</button>
+        <script type="text/javascript">
+            $("#hide").click(function() {
+                //隐藏是通过css的属性绑定实现的，display:none
+                $("p").hide()
+            })
+            $("#show").click(function() {
+                $("p").show()
+            })
+            $("#toggle").click(function() {
+                $("p").toggle()
+            })
+        </script>
+    </body>
+</html>

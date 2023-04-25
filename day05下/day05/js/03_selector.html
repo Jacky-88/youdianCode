@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <button id="btn">点我</button>
+        <div id="main">
+            <p>Hello World!1</p>
+            <p>
+                <a style="color: red;">Hello World!2</a>
+            </p>
+            <p>Hello World!3</p>
+        </div>
+        <script type="text/javascript">
+            var z = document.getElementById('btn')  //获取id为btn的元素
+            z.onclick = function () {
+                alert('亲，有什么可以帮你的-id')
+            }
+            var x = document.getElementById('main')
+            var y = document.getElementsByTagName('p') //返回的是一个数组，通过下标获取
+            console.log(z)
+            console.log(y)
+            document.write('div中的第二段文本是:' + y[1].innerHTML) //向当前文档中写入内容
+        </script>
+    </body>
+</html>

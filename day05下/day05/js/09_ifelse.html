@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <img id="myimage" src="img/off.png" alt="图片不存在"/>
+        <button onclick="changeImage('on')">打开</button>
+        <button onclick="changeImage('off')">关闭</button>
+        <script type="text/javascript">
+            function changeImage(status) {
+                x = document.getElementById('myimage')
+                if (status == 'on') {
+                    x.src = "img/on.png"
+                } else {
+                    x.src = "img/off.png"
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <p id="notice" style="color: red"></p>
+        <h1>header列表</h1>
+        <ul></ul>
+        <script type="text/javascript">
+            $.ajax({
+                type: "GET",
+                url: "http://httpbin.org/get",
+                //请求成功的操作
+                success: function(res) {
+                    for (i in res.headers) {
+                        $("ul").append("<li>" + i + ":" +res.headers[i] + "</li>")
+                    }
+                },
+                //请求失败的操作
+                error: function() {
+                    $("#notice").text('请求服务器失败，请稍后再试！')
+                }
+            })
+        </script>
+    </body>
+</html>

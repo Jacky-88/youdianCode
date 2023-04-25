@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <span>总分：{{ sum }}</span>
+        </div>
+        <script type="text/javascript">
+            const { ref,computed } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const math = ref(90)
+                    const chinese = ref(88)
+                    const english = ref(62)
+                    //当使用了计算属性时，返回的属性名和变量名是相同的用法，在模板中用{{ }}就可以
+                    const sum = computed(() => {
+                        return math.value + chinese.value + english.value
+                    })
+                    function sum1() {
+                        sum.value = math.value + chinese.value + english.value
+                    }
+                    return {
+                        sum
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <p v-show="seen">现在你看到了</p>
+            <p v-show="!seen">现在你看到了</p>
+        </div>
+        <script type="text/javascript">
+            const { ref } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const seen = ref(false)
+                    return {
+                        seen
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

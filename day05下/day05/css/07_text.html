@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css">
+            .p1 {
+                color: red;
+            }
+            .p2 {
+                text-align: center;
+            }
+            .p3 {
+                text-decoration: underline;
+            }
+            .p4 {
+                /* 只有给长宽后，才能知道文本是不是溢出的 */
+                width: 50px;
+                height: 50px;
+                /* 溢出部分由省略号代替 */
+                text-overflow: ellipsis;
+                /* 隐藏文本溢出的部分 */
+                overflow: hidden; 
+                /* 强制在一行显示文本 */
+                white-space: nowrap;
+            }
+            .p5 {
+                letter-spacing: 10px;
+            }
+            .p6 {
+                line-height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p class="p1">这是P1</p>
+            <p class="p2">这是P2</p>
+            <p class="p3">这是P3</p>
+            <p class="p4">This is some long text that will not fit in the box</p>
+            <p class="p5">这是P5</p>
+            <p class="p6">这是P6</p>
+        </div>
+        <script type="text/javascript">
+
+        </script>
+    </body>
+</html>

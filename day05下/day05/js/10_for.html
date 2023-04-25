@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+
+        <script type="text/javascript">
+            //遍历数组
+            var computer = ["主机", "显示器", "键盘", "鼠标"]
+            //方式1,只能获取到下标
+            for (i in computer) {
+                console.log(computer[i])
+            }
+            //方式2，下标和值都能获取到
+            computer.forEach(function(element, index) {
+                console.log(element, index)
+            })
+            //方式3
+            for (var i=0; i<computer.length; i++) {
+                console.log(computer[i])
+            }
+            //遍历对象
+            var user = {
+                name: "李四",
+                sex: "男",
+                age: 30
+            }
+            //方式1
+            for(k in user) {
+                console.log(user[k])
+            }
+            //方式2
+            //遍历值
+            Object.values(user).forEach(function (k) {
+                console.log(k)
+            })
+            //遍历key
+            Object.keys(user).forEach(function (k) {
+                console.log(user[k])
+            })
+        </script>
+    </body>
+</html>

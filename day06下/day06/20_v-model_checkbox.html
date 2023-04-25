@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <input type="checkbox" v-model="selected" value="swim">游泳</input>
+            <input type="checkbox" v-model="selected" value="gim">健身</input>
+            <input type="checkbox" v-model="selected" value="tour">旅游</input>
+        </div>
+        <script type="text/javascript">
+            const { ref,watch } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const selected = ref([])
+                    watch(selected, (newVal, oldVal) => {
+                        console.log(selected.value, newVal, oldVal)
+                    })
+                    return {
+                        selected
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

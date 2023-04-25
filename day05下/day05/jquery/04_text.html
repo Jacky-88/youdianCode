@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <p id="txt">这是一个<b>段落</b></p>
+        <button id="btn1">显示文本</button>
+        <button id="btn2">显示HTML</button>
+        <p id="demo"></p>
+        <input type="button" id="input" value="按钮"></input>
+        <script type="text/javascript">
+            $("#btn1").click(function() {
+                x = $("#txt").text()
+                console.log(x)
+                $("#demo").text(x).css("color", "red") //将x写到demo的P，然后加上css属性
+            })
+            $("#btn2").click(function() {
+                x = $("#txt").html()
+                console.log(x)
+                $("#demo").html(x).css("color", "red") //将x写到demo的P，然后加上css属性
+                y = $("#input").val("按钮1")
+                console.log(y)
+            })
+        </script>
+    </body>
+</html>

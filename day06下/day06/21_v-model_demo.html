@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <form action="#">
+                <h1>欢迎访问管理后台</h1>
+                用户名：<input type="text" v-model="form.username">
+                密码：<input type="password" v-model="form.password">
+                <button @click="loginBtn">登录</button>
+            </form>
+            <p style="color:red;" v-if="notice">用户名或者密码不能为空！</p>
+        </div>
+        <script type="text/javascript">
+            const { ref,reactive } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const form = reactive({
+                        username: '',
+                        password: ''
+                    })
+                    const notice = ref(false)
+                    function loginBtn() {
+                        if (!form.username || !form.password) {
+                            notice.value = true
+                        } else {
+                            notice.value = false
+                            console.log(form)
+                        }
+                    }
+                    return {
+                        form,
+                        notice,
+                        loginBtn
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

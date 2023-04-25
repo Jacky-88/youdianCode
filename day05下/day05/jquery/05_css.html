@@ -1,0 +1,24 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id="demo">
+            <p>这是一个段落</p>
+        </div>
+        <button id="btn">添加样式</button>
+        <script type="text/javascript">
+            $("#btn").click(function() {
+                $("#demo").css("color", "red")
+                $("#demo").addClass("aaa")
+                $("#demo").removeClass("aaa")
+            })
+        </script>
+    </body>
+</html>

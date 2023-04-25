@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <!-- 绑定一个change事件，当选项发生改变时触发，$event是个事件对象，包括变化的值和信息 -->
+            <select @change="selectComputer($event)">
+                <option value="None">未选择</option>
+                <!-- :key是v-for基于哪个唯一键做循环 -->
+                <!-- :value是选择项的实际的值 -->
+                <!-- :label是选择项展示给用户的值 -->
+                <option 
+                    v-for="row in computer" 
+                    :key="row.id" 
+                    :value="row.id" 
+                    :label="row.name">
+                </option>
+            </select>
+            <p>当前选择主机ID：{{ selectComputerId }}</p>
+        </div>
+        <script type="text/javascript">
+            const { ref } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const computer = ref([
+                        {id:1, name:'主机1'},
+                        {id:2, name:'主机2'},
+                        {id:3, name:'主机3'},
+                    ])
+                    const selectComputerId = ref()
+                    function selectComputer(event) {
+                        console.log(event)  //打印该事件的事件对象
+                        selectComputerId.value = event.target.value //获取事件的值
+                        if (selectComputerId.value == 'None') {
+                            selectComputerId.value = '未选择!'
+                        }
+                    }
+                    return {
+                        computer,
+                        selectComputerId,
+                        selectComputer
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

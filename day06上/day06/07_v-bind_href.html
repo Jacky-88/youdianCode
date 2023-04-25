@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+            
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <a href="http://www.baidu.com">百度</a>
+            <br>
+            <a v-bind:href="url">百度</a>
+        </div>
+        <script type="text/javascript">
+            const { ref } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const url = "http://www.baidu.com"
+                    return {
+                        url
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

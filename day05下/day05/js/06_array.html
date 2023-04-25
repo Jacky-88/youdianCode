@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+
+        <script type="text/javascript">
+            //数组定义
+            var computer = new Array()
+            var computer1 = []
+            //向数组中添加元素
+            computer[0] = "联想"
+            computer[1] = "华为"
+            computer[2] = "小米"
+            //或者
+            //数组的添加，在vue2中不触发响应式
+            computer.push("华硕")
+            console.log(computer)
+            //通过索引查找元素
+            console.log(computer[1])
+            //数组长度
+            console.log(computer.length)
+            //数组遍历
+            for (var i=0; i<computer.length; i++) {
+                console.log(computer[i])
+            }
+            //或者
+            computer.forEach(function(element,index) {
+                console.log(element,index)
+            })
+            //数组删除
+            console.log(computer.slice(0, computer.length - 1))
+        </script>
+    </body>
+</html>

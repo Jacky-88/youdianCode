@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+            #test {
+                height: 200px;
+                width: 200px;
+            }
+            .active {
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <!-- active这个class存在与否，取决于数据属性isActive -->
+            <div v-bind:class="{active: isActive}" id="test">Hello Vue!</div>
+            <button @click="btn()">按钮</button>
+        </div>
+        <script type="text/javascript">
+            const { ref } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const isActive = ref(false)
+                    function btn() {
+                        if (isActive.value) {
+                            isActive.value = false
+                        } else {
+                            isActive.value = true
+                        }
+                    }
+                    return {
+                        isActive,
+                        btn
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

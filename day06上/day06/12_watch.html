@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <p>消息：{{ msg }}</p>
+            <p>观察的消息：{{ watchMsg }}</p>
+            <button @click="btn()">按钮</button>
+        </div>
+        <script type="text/javascript">
+            const { ref,watch } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const msg = ref('Hello Vue!')
+                    const watchMsg = ref()
+                    function btn() {
+                        msg.value = 'Hello go!'
+                    }
+                    //定义监听属性,msg是表示被监听的数据，newVal和oldVal是指
+                    //被监听的数据发生变化时，他的新值和旧值
+                    watch(msg, (newVal, oldVal) => {
+                        console.log(newVal, oldVal)
+                        watchMsg.value = newVal
+                        //watchMsg.value = msg.value
+                    })
+                    return {
+                        msg,
+                        watchMsg,
+                        btn
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

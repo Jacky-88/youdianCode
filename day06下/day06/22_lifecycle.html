@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <p>{{ msg }}</p>
+            <button @click="btn()">修改</button>
+        </div>
+        <script type="text/javascript">
+            const { ref,onBeforeMount,onMounted,onBeforeUpdate,onUpdated } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const msg = ref('hello aaa!')
+                    function btn() {
+                        msg.value = 'hello bbb!'
+                    }
+                    //生命周期钩子
+                    onBeforeMount(() => {
+                        console.log('onBeforeMount')
+                    })
+                    onMounted(() => {
+                        console.log('onMounted')
+                    })
+                    onBeforeUpdate(() => {
+                        console.log('onBeforeUpdate')
+                    })
+                    onUpdated(() => {
+                        console.log('onUpdated')
+                    })
+                    return {
+                        msg,
+                        btn
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <!-- 数据双向绑定本质：绑定了dom节点的值和vue属性的值，无论哪个先发生变化，另一个也会跟着变化 -->
+            <input type="text" :value="msg" @input="input($event)">
+            <!-- 等同于 -->
+            <br>
+            <input type="text" v-model="msg1">
+        </div>
+        <script type="text/javascript">
+            const { ref,watch } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const msg = ref('hello vue!')
+                    const msg1 = ref('hello go!')
+                    function input(event) {
+                        console.log(msg.value)
+                        msg.value = event.target.value
+                        console.log(event.target.value, msg.value)
+                    }
+                    watch(msg1, () => {
+                        console.log(msg1.value)
+                    })
+                    return {
+                        msg,
+                        msg1,
+                        input
+                    }
+                }
+            }
+            Vue.createApp(HelloVueApp).mount('#hello-vue')
+        </script>
+    </body>
+</html>

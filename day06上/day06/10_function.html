@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script src='https://unpkg.com/vue@3'></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id='hello-vue'>
+            <p>{{ count }}</p>
+            <button @click="increment()">增加</button>
+        </div>
+        <script type="text/javascript">
+            const { ref } = Vue
+            const HelloVueApp = {
+                setup() {
+                    const count = ref(1)
+                    //普通方法
+                    // function increment() {
+                    //     count.value ++
+                    // }
+                    //箭头函数
+                    const increment = (() => {
+                        count.value ++
+                    })
+                    return {
+                        count,
+                        increment
+                    }
+                }
+            }
+            const vm = Vue.createApp(HelloVueApp).mount('#hello-vue')
+            console.log(vm.count)
+            vm.increment()
+        </script>
+    </body>
+</html>

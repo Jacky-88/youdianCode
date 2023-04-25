@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <button id="btn1">点我1</button>
+        <button id="btn2">点我2</button>
+        <script type="text/javascript">
+            //js实现
+            var x = document.getElementById('btn1')
+            x.onclick = function() {
+                alert("你好，我是JS")
+            }
+            //jquery实现
+            $('#btn2').click(function () {
+                alert("你好，我是jQuery")
+            })
+        </script>
+    </body>
+</html>

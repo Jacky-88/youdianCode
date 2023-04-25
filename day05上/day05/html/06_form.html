@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <form name="input" action="http://www.baidu.com", method="post">
+            <!-- 文本输入框 -->
+            First name: <input type="text" name="firstname"/><br/>
+            Last name: <input type="text" name="lastname"/><br/>
+            <!-- 单选框 -->
+            <!-- 如果选择了男，则会拿到sex=male -->
+            <input type="radio" name="sex" value="male" checked />男
+            <input type="radio" name="sex" value="female" />女
+            <br/>
+            <!-- 多选框 -->
+            <!-- 多选框拿到的值是个数组 -->
+            <input type="checkbox" name="vehicle" value="Bike"/> 喜欢自行车
+            <input type="checkbox" name="vehicle" value="Car"/> 喜欢小汽车
+            <br/>
+            <input type="submit" value="提交了"/>
+            <input type="button" value="验证按钮" onclick="alert('密码输入正确')"/>
+            <input type="reset" />
+        </form>
+        <script type="text/javascript">
+
+        </script>
+    </body>
+</html>

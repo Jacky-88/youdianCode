@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <input id="input"/>
+        <p id="demo"></p>
+        <script type="text/javascript">
+            //直接写入到body中
+            document.write('<p>这是JS写入的段落</p>')
+            //通过id选择器写入
+            x = document.getElementById('demo')
+            x.innerHTML = 'Hello'
+            //修改标签属性
+            y = document.getElementById('input')
+            y.type = 'button'
+            y.value = '按钮'
+            //修改标签样式
+            x.style.color = "blue"
+        </script>
+    </body>
+</html>
